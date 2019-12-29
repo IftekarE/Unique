@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+<p>Check console for result. To get to console right click the mouse and click inspect and then click on console</p>
+<button onclick="button();">Run the code</button><!--this is a button-->
+<script>
+//Variables START
+var entry = [1,1,8,7,87,5,6,2903,7,8];//this is the input array 
+var ordered = entry; //this is the array where the inputs will be sorrted 
+var exit = [];//this is the array thats for the output
+//Variables END
+//sorting START
+function order_entry(a, b) {//this is a simple sorting function it works by subtracting one number from another as showen by "a - b"
+  return a - b;//subtracting 
+}
+//sorting END
+//comparison START
+function button(){//this will run the code 
+    ordered.sort(order_entry);//calling the sorting function 
+        for (var i = 0; i < ordered.length - 1; i++){//seen as the numbers are sorted from least to greatest, it compares one number to the next number to see if they repeat 
+            if (ordered[i + 1] == ordered[i]) {//its checking if one number equall to the next
+                exit.push(ordered[i]);//if condition is met then it adds therepeating number to the result array 
+        }
+    }
+    console.log("This is the sorted array: " + ordered); // this is loggin the sorted array 
+    console.log("This is all the non unique numbers: " + exit);// this is loggin the output
+}
+//comparison END
+</script>
+</body>
